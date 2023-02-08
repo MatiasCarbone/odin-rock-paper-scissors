@@ -31,19 +31,18 @@ function getInput() {
   }
 }
 
-//This function compares its two parameters and returns a string that
-//announces a winner.
+//This function compares its two parameters and returns a string that announces the result.
 function playRound(player_input, computer_input) {
   if (player_input == computer_input) {
-    return `The result is a tie! Both players chose ${player_input}.\n`;
+    return "Tie";
   } else if (
     (player_input == "Rock" && computer_input == "Scissors") ||
     (player_input == "Paper" && computer_input == "Rock") ||
     (player_input == "Scissors" && computer_input == "Paper")
   ) {
-    return `You win! ${player_input} beats ${computer_input.toLowerCase()}.\n`;
+    return `Win`;
   } else {
-    return `You lose! ${computer_input} beats ${player_input.toLowerCase()}.\n`;
+    return `Lose`;
   }
 }
 
@@ -51,9 +50,15 @@ function playRound(player_input, computer_input) {
 //to ask the user for input and compare it to the random choice of the computer and
 //determine a winner for that round.
 function game(rounds = 5) {
+  let round;
+  let playerScore;
+  let computerScore;
+
   for (i = 1; i <= rounds; i++) {
     console.log(`Round ${i}:\n`);
-    console.log(playRound(getInput(), getComputerChoice()));
+    round = playRound(getInput(), getComputerChoice());
+
+    console.log(round);
   }
 }
 
