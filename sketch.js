@@ -50,16 +50,47 @@ function playRound(player_input, computer_input) {
 //to ask the user for input and compare it to the random choice of the computer and
 //determine a winner for that round.
 function game(rounds = 5) {
-  let round;
-  let playerScore;
-  let computerScore;
+  let roundResult;
+  let playerScore = 0;
+  let computerScore = 0;
+
+  let userChoice;
+  let computerChoice;
+
+  console.log(`Playing ${rounds} rounds...`);
 
   for (i = 1; i <= rounds; i++) {
     console.log(`Round ${i}:\n`);
-    round = playRound(getInput(), getComputerChoice());
 
-    console.log(round);
+    computerChoice = getComputerChoice();
+    userChoice = getInput();
+    roundResult = playRound(userChoice, computerChoice);
+
+    // console.log(roundResult);
+    if (roundResult == "Win") {
+      console.log(
+        `You win! ${userChoice} beats ${computerChoice.toLowerCase()}.`
+      );
+    } else if (roundResult == "Lose") {
+      console.log(
+        `You lose! ${computerChoice} beats ${userChoice.toLowerCase()}.`
+      );
+    } else if (roundResult == "Tie") {
+      console.log(
+        `The result is a tie! Both players chose ${userChoice.toLowerCase()}.`
+      );
+    }
+
+    if (roundResult == "Win") {
+      playerScore++;
+    } else if (roundResult == "Lose") {
+      computerScore++;
+    }
+
+    console.log(`Score: ${playerScore} - ${computerScore}`);
   }
+
+  console.log(`FINAL SCORE: PLAYER ${playerScore} - COMPUTER ${computerScore}`);
 }
 
 game();
