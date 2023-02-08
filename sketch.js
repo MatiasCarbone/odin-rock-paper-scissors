@@ -30,4 +30,19 @@ function playRound(player_input, computer_input) {
   }
 }
 
-console.log(playRound("Rock", "Scissors"));
+function getInput() {
+  while (true) {
+    choice = prompt("Rock, paper or scissors? Enter your choice:");
+    choice = choice[0].toUpperCase() + choice.slice(1).toLowerCase();
+
+    if (choice == "Rock" || choice == "Paper" || choice == "Scissors") {
+      break;
+    }
+
+    alert("Invalid input! Please try again.");
+  }
+
+  return choice;
+}
+
+getInput();
