@@ -49,9 +49,10 @@ function playRound(player_input, computer_input) {
 
 //This function keeps calls the above functions for a specified number of times
 //to ask the user for input and compare it to the random choice of the computer and
-//determine a winner for that round. Prints the round result and keeps track of the score.
+//determine a winner for that round.
 function game(rounds = 5) {
   for (i = 1; i <= rounds; i++) {
+    console.log(`Round ${i}:\n`);
     console.log(playRound(getInput(), getComputerChoice()));
   }
 }
