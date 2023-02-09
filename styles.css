@@ -28,11 +28,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  gap: 40px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
 }
 
 .icon-img {
   height: 200px;
+  filter: drop-shadow(3px 3px 1px #141414);
+}
+
+.icon-img:hover {
+  position: relative;
+  bottom: 20px;
+  height: 220px;
+  filter: drop-shadow(18px 18px 3px #141414);
+}
+
+.icon-img.icon-img:active {
+  bottom: 10px;
+  height: 210px;
+  filter: drop-shadow(5px 6px 5px #14141460);
 }
 
 footer {
