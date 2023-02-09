@@ -1,6 +1,11 @@
 body {
   font-family: "Press Start 2P", cursive;
   margin: 0px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
@@ -20,9 +25,35 @@ body {
 
 .buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
 }
 
 .icon-img {
-  width: 100px;
+  height: 200px;
+}
+
+footer {
+  color: honeydew;
+  background-color: #141414;
+  font-size: 11px;
+  padding: 8px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: honeydew;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
