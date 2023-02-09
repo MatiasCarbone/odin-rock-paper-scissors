@@ -17,3 +17,12 @@ body {
   align-items: center;
   padding: 20px 0px;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-img {
+  width: 100px;
+}
