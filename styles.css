@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #8c3f5d;
 }
 
 .title {
@@ -38,15 +39,17 @@ footer {
   color: honeydew;
   background-color: #141414;
   font-size: 11px;
-  padding: 8px 60px;
+  padding: 8px 40px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 footer p {
   text-align: center;
+  line-height: 14px;
 }
 
 footer a {
