@@ -22,6 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 0px;
+  padding-top: 24px;
 }
 
 .buttons {
@@ -37,21 +38,21 @@ body {
 }
 
 .icon-img {
-  height: 200px;
-  filter: drop-shadow(3px 3px 1px #141414);
+  height: 240px;
+  filter: drop-shadow(3px 3px 3px #141414);
 }
 
 .icon-img:hover {
   position: relative;
   bottom: 20px;
-  height: 220px;
-  filter: drop-shadow(18px 18px 3px #141414);
+  height: 260px;
+  filter: drop-shadow(12px 18px 8px #14141490);
 }
 
 .icon-img.icon-img:active {
   bottom: 10px;
-  height: 210px;
-  filter: drop-shadow(5px 6px 5px #14141460);
+  height: 250px;
+  filter: drop-shadow(6px 9px 6px #141414bb);
 }
 
 footer {
