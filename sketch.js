@@ -1,28 +1,42 @@
-const scoreboard = document.querySelector("#scoreboard");
-
-const firstline = document.createElement("h1");
-const secondline = document.createElement("h2");
-
-firstline.textContent = "Pick your weapon...";
-firstline.setAttribute("style", "text-align: center; font-size: 32px;");
-secondline.textContent = "(You will play best of 5 against the machine)";
-secondline.setAttribute(
-  "style",
-  "text-align: center; font-size: 16px; margin-top: -10px"
-);
-
-scoreboard.appendChild(firstline);
-scoreboard.appendChild(secondline);
-
-scoreboard.setAttribute("style", "margin-bottom: -100px");
+const firstline = document.querySelector("#firstline");
+const secondline = document.querySelector("#secondline");
 
 const buttons = document.querySelectorAll(".button");
 
 buttons.forEach((item) => {
-  item.onclick = () => console.log(item);
+  item.onclick = () => {
+    console.log(item);
+
+    let user_input = item.id;
+    let computer_input = getComputerChoice();
+
+    game(user_input, computer_input);
+  };
 });
 
 /* **************************************************************************************** */
+
+function game(userChoice, computerChoice) {
+  let roundResult = playRound(userChoice, computerChoice);
+
+  // console.log(roundResult);
+  if (roundResult == "Win") {
+    firstline.textContent = "YOU WIN!";
+    console.log(
+      `You win! ${userChoice} beats ${computerChoice.toLowerCase()}.`
+    );
+  } else if (roundResult == "Lose") {
+    firstline.textContent = "YOU LOSE.";
+    console.log(
+      `You lose! ${computerChoice} beats ${userChoice.toLowerCase()}.`
+    );
+  } else if (roundResult == "Tie") {
+    firstline.textContent = "IT'S A TIE.";
+    console.log(
+      `The result is a tie! Both players chose ${userChoice.toLowerCase()}.`
+    );
+  }
+}
 
 //This functions returns a random choice between three values. Represents the computer.
 function getComputerChoice() {
