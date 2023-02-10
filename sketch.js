@@ -1,3 +1,21 @@
+const scoreboard = document.querySelector("#scoreboard");
+
+const firstline = document.createElement("h1");
+const secondline = document.createElement("h2");
+
+firstline.textContent = "Pick your weapon...";
+firstline.setAttribute("style", "text-align: center; font-size: 32px;");
+secondline.textContent = "(You will play best of 5 against the machine)";
+secondline.setAttribute(
+  "style",
+  "text-align: center; font-size: 16px; margin-top: -10px"
+);
+
+scoreboard.appendChild(firstline);
+scoreboard.appendChild(secondline);
+
+scoreboard.setAttribute("style", "margin-bottom: -100px");
+
 //This functions returns a random choice between three values. Represents the computer.
 function getComputerChoice() {
   let max = 3;
@@ -15,6 +33,8 @@ function getComputerChoice() {
   }
 }
 
+//DEPRECATED! Choice is now determined by clicking the buttons
+/*
 //This function prompts the user for input. Then it formats and validates
 //the input and returns it. In case the input is not what is expected, the
 //function keeps repeating.
@@ -30,6 +50,7 @@ function getInput() {
     alert("Invalid input! Please try again.");
   }
 }
+*/
 
 //This function compares its two parameters and returns a string that announces the result.
 function playRound(player_input, computer_input) {
@@ -92,5 +113,3 @@ function game(rounds = 5) {
 
   console.log(`FINAL SCORE: PLAYER ${playerScore} - COMPUTER ${computerScore}`);
 }
-
-game();

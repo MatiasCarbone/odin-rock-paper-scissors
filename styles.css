@@ -9,11 +9,6 @@ body {
   background-color: #8c3f5d;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-
 .title {
   color: honeydew;
   font-size: 32px;
