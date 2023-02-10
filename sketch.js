@@ -16,6 +16,14 @@ scoreboard.appendChild(secondline);
 
 scoreboard.setAttribute("style", "margin-bottom: -100px");
 
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach((item) => {
+  item.onclick = () => console.log(item);
+});
+
+/* **************************************************************************************** */
+
 //This functions returns a random choice between three values. Represents the computer.
 function getComputerChoice() {
   let max = 3;
@@ -32,6 +40,71 @@ function getComputerChoice() {
       return "Scissors";
   }
 }
+
+//This function compares its two parameters and returns a string that announces the result.
+function playRound(player_input, computer_input) {
+  if (player_input == computer_input) {
+    return "Tie";
+  } else if (
+    (player_input == "Rock" && computer_input == "Scissors") ||
+    (player_input == "Paper" && computer_input == "Rock") ||
+    (player_input == "Scissors" && computer_input == "Paper")
+  ) {
+    return `Win`;
+  } else {
+    return `Lose`;
+  }
+}
+
+//DEPRECATED! Was replaced with a function that works better with a UI
+/*
+//This function keeps calls the above functions for a specified number of times
+//to ask the user for input and compare it to the random choice of the computer and
+//determine a winner for that round.
+function game(rounds = 5) {
+  let roundResult;
+  let playerScore = 0;
+  let computerScore = 0;
+  
+  let userChoice;
+  let computerChoice;
+  
+  console.log(`Playing ${rounds} rounds...`);
+  
+  for (i = 1; i <= rounds; i++) {
+    console.log(`Round ${i}:\n`);
+    
+    computerChoice = getComputerChoice();
+    userChoice = getInput();
+    roundResult = playRound(userChoice, computerChoice);
+    
+    // console.log(roundResult);
+    if (roundResult == "Win") {
+      console.log(
+        `You win! ${userChoice} beats ${computerChoice.toLowerCase()}.`
+        );
+      } else if (roundResult == "Lose") {
+        console.log(
+          `You lose! ${computerChoice} beats ${userChoice.toLowerCase()}.`
+          );
+        } else if (roundResult == "Tie") {
+          console.log(
+            `The result is a tie! Both players chose ${userChoice.toLowerCase()}.`
+      );
+    }
+    
+    if (roundResult == "Win") {
+      playerScore++;
+    } else if (roundResult == "Lose") {
+      computerScore++;
+    }
+    
+    console.log(`Score: ${playerScore} - ${computerScore}`);
+  }
+  
+  console.log(`FINAL SCORE: PLAYER ${playerScore} - COMPUTER ${computerScore}`);
+}
+*/
 
 //DEPRECATED! Choice is now determined by clicking the buttons
 /*
@@ -51,65 +124,3 @@ function getInput() {
   }
 }
 */
-
-//This function compares its two parameters and returns a string that announces the result.
-function playRound(player_input, computer_input) {
-  if (player_input == computer_input) {
-    return "Tie";
-  } else if (
-    (player_input == "Rock" && computer_input == "Scissors") ||
-    (player_input == "Paper" && computer_input == "Rock") ||
-    (player_input == "Scissors" && computer_input == "Paper")
-  ) {
-    return `Win`;
-  } else {
-    return `Lose`;
-  }
-}
-
-//This function keeps calls the above functions for a specified number of times
-//to ask the user for input and compare it to the random choice of the computer and
-//determine a winner for that round.
-function game(rounds = 5) {
-  let roundResult;
-  let playerScore = 0;
-  let computerScore = 0;
-
-  let userChoice;
-  let computerChoice;
-
-  console.log(`Playing ${rounds} rounds...`);
-
-  for (i = 1; i <= rounds; i++) {
-    console.log(`Round ${i}:\n`);
-
-    computerChoice = getComputerChoice();
-    userChoice = getInput();
-    roundResult = playRound(userChoice, computerChoice);
-
-    // console.log(roundResult);
-    if (roundResult == "Win") {
-      console.log(
-        `You win! ${userChoice} beats ${computerChoice.toLowerCase()}.`
-      );
-    } else if (roundResult == "Lose") {
-      console.log(
-        `You lose! ${computerChoice} beats ${userChoice.toLowerCase()}.`
-      );
-    } else if (roundResult == "Tie") {
-      console.log(
-        `The result is a tie! Both players chose ${userChoice.toLowerCase()}.`
-      );
-    }
-
-    if (roundResult == "Win") {
-      playerScore++;
-    } else if (roundResult == "Lose") {
-      computerScore++;
-    }
-
-    console.log(`Score: ${playerScore} - ${computerScore}`);
-  }
-
-  console.log(`FINAL SCORE: PLAYER ${playerScore} - COMPUTER ${computerScore}`);
-}
