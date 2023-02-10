@@ -22,19 +22,14 @@ function game(userChoice, computerChoice) {
   // console.log(roundResult);
   if (roundResult == "Win") {
     firstline.textContent = "YOU WIN!";
-    console.log(
-      `You win! ${userChoice} beats ${computerChoice.toLowerCase()}.`
-    );
+    secondline.textContent = `${userChoice} beats ${computerChoice.toLowerCase()}.`;
   } else if (roundResult == "Lose") {
     firstline.textContent = "YOU LOSE.";
-    console.log(
-      `You lose! ${computerChoice} beats ${userChoice.toLowerCase()}.`
-    );
+    secondline.textContent = `${userChoice} loses to ${computerChoice.toLowerCase()}.`;
   } else if (roundResult == "Tie") {
     firstline.textContent = "IT'S A TIE.";
-    console.log(
-      `The result is a tie! Both players chose ${userChoice.toLowerCase()}.`
-    );
+
+    secondline.textContent = `Both players chose ${userChoice.toLowerCase()}.`;
   }
 }
 
