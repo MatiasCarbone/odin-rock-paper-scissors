@@ -40,8 +40,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-top: -100px;
-  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
@@ -66,6 +64,25 @@ body {
   bottom: 10px;
   height: 250px;
   filter: drop-shadow(6px 9px 6px #141414bb);
+}
+
+.scores {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 550px;
+  margin: 0px auto;
+  font-size: 14px;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreboard h1 {
+  text-align: center;
 }
 
 footer {

@@ -28,7 +28,6 @@ function game(userChoice, computerChoice) {
     secondline.textContent = `${userChoice} loses to ${computerChoice.toLowerCase()}.`;
   } else if (roundResult == "Tie") {
     firstline.textContent = "IT'S A TIE.";
-
     secondline.textContent = `Both players chose ${userChoice.toLowerCase()}.`;
   }
 }
