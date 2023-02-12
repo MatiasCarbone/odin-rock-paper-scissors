@@ -3,6 +3,11 @@ const secondline = document.querySelector("#secondline");
 
 const buttons = document.querySelectorAll(".button");
 
+const scoreboard = document.querySelector(".scores-title");
+const scores = document.querySelector(".scores");
+const message = document.createElement("div");
+message.textContent = "Restart the page to play again.";
+
 const player = document.querySelector("#player-score");
 const computer = document.querySelector("#computer-score");
 
@@ -41,6 +46,23 @@ function game(userChoice, computerChoice) {
 
   player.textContent = `Player: ${playerScore}`;
   computer.textContent = `Computer: ${computerScore}`;
+
+  if (playerScore >= 5) {
+    scoreboard.textContent = "GAME OVER! YOU WIN.";
+  }
+  if (computerScore >= 5) {
+    scoreboard.textContent = "GAME OVER! YOU LOST.";
+  }
+
+  if (computerScore >= 5 || playerScore >= 5) {
+    scores.removeChild(player);
+    scores.removeChild(computer);
+    scores.appendChild(message);
+
+    buttons.forEach((item) => {
+      item.onclick = () => {};
+    });
+  }
 }
 
 //This functions returns a random choice between three values. Represents the computer.
