@@ -110,3 +110,14 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 550px) {
+  .buttons {
+    gap: 0px;
+  }
+  .scores {
+    gap: 15px;
+    text-align: center;
+    line-height: 26px;
+  }
+}
