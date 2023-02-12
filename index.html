@@ -7,7 +7,56 @@
     <title>Rock, paper, scissors</title>
 
     <link rel="stylesheet" href="styles.css" />
-    <script src="sketch.js"></script>
+    <script src="sketch.js" defer></script>
+
+    <!-- Add pixel-style font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="titlebar">
+      <header class="title">ROCK, PAPER, SCISSORS</header>
+    </div>
+    <div id="header">
+      <h1 id="firstline">Pick your weapon...</h1>
+      <h2 id="secondline">
+        (You will play against the computer. First with 5 points wins.)
+      </h2>
+    </div>
+    <div class="buttons">
+      <button class="button" id="Rock">
+        <img src="img\rock.png" class="icon-img" />
+      </button>
+      <button class="button" id="Paper">
+        <img src="img\paper.png" class="icon-img" />
+      </button>
+      <button class="button" id="Scissors">
+        <img src="img\scissors.png" class="icon-img" />
+      </button>
+    </div>
+    <div class="scoreboard">
+      <h1 class="scores-title">SCOREBOARD</h1>
+      <div class="scores">
+        <h2 id="player-score">Player: 0</h2>
+        <h2 id="computer-score">Computer: 0</h2>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright © Matias Carbone 2023</p>
+      <a
+        href="https://github.com/MatiasCarbone/odin-rock-paper-scissors"
+        target="_blank"
+      >
+        <img src="img\gh-logo.png" height="30px" />
+      </a>
+      <p>
+        Illustrations belong to
+        <a href="https://twitter.com/scrixels" target="_blank">Scrixels</a>
+      </p>
+    </footer>
+  </body>
 </html>

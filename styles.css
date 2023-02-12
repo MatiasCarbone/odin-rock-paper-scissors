@@ -1,0 +1,123 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  margin: 0px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #8c3f5d;
+}
+
+.title {
+  color: honeydew;
+  font-size: 32px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.titlebar {
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  padding-top: 24px;
+}
+
+#firstline {
+  text-align: center;
+  font-size: 32px;
+}
+
+#secondline {
+  text-align: center;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+}
+
+.icon-img {
+  height: 240px;
+  filter: drop-shadow(3px 3px 3px #141414);
+}
+
+.icon-img:hover {
+  position: relative;
+  bottom: 20px;
+  height: 260px;
+  filter: drop-shadow(12px 18px 8px #14141490);
+}
+
+.icon-img.icon-img:active {
+  bottom: 10px;
+  height: 250px;
+  filter: drop-shadow(6px 9px 6px #141414bb);
+}
+
+.scores {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 550px;
+  margin: 0px auto;
+  font-size: 14px;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreboard h1 {
+  text-align: center;
+}
+
+footer {
+  color: honeydew;
+  background-color: #141414;
+  font-size: 11px;
+  padding: 8px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer p {
+  text-align: center;
+  line-height: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: honeydew;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 550px) {
+  .buttons {
+    gap: 0px;
+  }
+  .scores {
+    gap: 15px;
+    text-align: center;
+    line-height: 26px;
+  }
+}
