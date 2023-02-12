@@ -3,6 +3,9 @@ const secondline = document.querySelector("#secondline");
 
 const buttons = document.querySelectorAll(".button");
 
+const player = document.querySelector("#player-score");
+const computer = document.querySelector("#computer-score");
+
 buttons.forEach((item) => {
   item.onclick = () => {
     console.log(item);
@@ -16,6 +19,9 @@ buttons.forEach((item) => {
 
 /* **************************************************************************************** */
 
+let playerScore = 0;
+let computerScore = 0;
+
 function game(userChoice, computerChoice) {
   let roundResult = playRound(userChoice, computerChoice);
 
@@ -23,13 +29,18 @@ function game(userChoice, computerChoice) {
   if (roundResult == "Win") {
     firstline.textContent = "YOU WIN!";
     secondline.textContent = `${userChoice} beats ${computerChoice.toLowerCase()}.`;
+    playerScore++;
   } else if (roundResult == "Lose") {
     firstline.textContent = "YOU LOSE.";
     secondline.textContent = `${userChoice} loses to ${computerChoice.toLowerCase()}.`;
+    computerScore++;
   } else if (roundResult == "Tie") {
     firstline.textContent = "IT'S A TIE.";
     secondline.textContent = `Both players chose ${userChoice.toLowerCase()}.`;
   }
+
+  player.textContent = `Player: ${playerScore}`;
+  computer.textContent = `Computer: ${computerScore}`;
 }
 
 //This functions returns a random choice between three values. Represents the computer.
