@@ -6,7 +6,7 @@ const buttons = document.querySelectorAll(".button");
 const scoreboard = document.querySelector(".scores-title");
 const scores = document.querySelector(".scores");
 const message = document.createElement("div");
-message.textContent = "Restart the page to play again.";
+message.textContent = "Press any button to play again.";
 
 const player = document.querySelector("#player-score");
 const computer = document.querySelector("#computer-score");
@@ -60,7 +60,9 @@ function game(userChoice, computerChoice) {
     scores.appendChild(message);
 
     buttons.forEach((item) => {
-      item.onclick = () => {};
+      item.onclick = () => {
+        location.reload();
+      };
     });
   }
 }
